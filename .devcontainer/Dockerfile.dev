@@ -1,0 +1,11 @@
+# Base image with Maven + JDK 17
+FROM maven:3.9.1-eclipse-temurin-17
+
+# Set working directory inside container
+WORKDIR /app
+
+# Install any extra tools you need
+RUN apt-get update && apt-get install -y git curl vim && rm -rf /var/lib/apt/lists/*
+
+# Default command (optional, usually overridden in dev)
+CMD ["bash"]

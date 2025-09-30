@@ -1,0 +1,10 @@
+FROM eclipse-temurin:17-jdk-alpine
+
+# Copy the Spring Boot fat JAR into the container
+COPY target/config-server-0.0.1-SNAPSHOT.jar /workspace/configserver.jar
+
+# Copy configuration files into the image
+COPY configurationFolder /workspace/configurationFolder
+
+# Run it
+ENTRYPOINT ["java", "-jar", "/workspace/configserver.jar"]

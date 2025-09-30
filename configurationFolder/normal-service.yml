@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://pg-container:5432/mydb # replace with your DB name
+    username: myuser # your postgres username
+    password: mypassword # your postgres password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # auto-create tables (good for dev, not prod)
+    show-sql: true # prints SQL in console
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
