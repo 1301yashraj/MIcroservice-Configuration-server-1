@@ -3,9 +3,14 @@ server:
 
 spring:
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        native:
-          search-locations: file:/workspace/configurationFolder
+        git:
+          uri: https://github.com/1301yashraj/initial-practice-configuration-server-repo.git
+          default-label: main # branch name (e.g. master/main)
+          search-paths: # optional, if configs are inside subfolders
+            - configurationFolder
+          username: 1301yashraj
+          password: ${apikey}
