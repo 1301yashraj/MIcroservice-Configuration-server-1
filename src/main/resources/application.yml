@@ -14,3 +14,10 @@ spring:
             - configurationFolder
           username: 1301yashraj
           password: ${apikey}
+
+  management:
+   endpoints:
+     web:
+       exposure:
+         include: "*"
+
